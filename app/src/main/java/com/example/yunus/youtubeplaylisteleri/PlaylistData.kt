@@ -3,12 +3,10 @@ package com.example.yunus.youtubeplaylisteleri
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-abstract class PlaylistData {
-
-
+class PlaylistData {
     @Expose
     @SerializedName("items")
-    var İtems: List<Items>? = null
+    public var items: List<Items>? = null
     @Expose
     @SerializedName("pageInfo")
     var pageInfo: PageInfo? = null
