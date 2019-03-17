@@ -8,5 +8,6 @@ interface ApiInterface {
     //GET https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCRPMOM6Tb5uBBp2DCzQ4EJQ&maxResults=20&key={YOUR_API_KEY}
     @GET("playlists?part=snippet")
     fun tumListeleriGetir(@Query("channelId") channelId:String
-                          ,@Query("key") apiKey : String) : Call<PlaylistData>
+                          ,@Query("key") apiKey : String
+                          ,@Query("maxResults") limit:Int) : Call<PlaylistData>
 }
