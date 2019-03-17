@@ -26,7 +26,7 @@ class PlaylistData {
         var snippet: Snippet? = null
         @Expose
         @SerializedName("id")
-        var İd: String? = null
+        var id: String? = null
         @Expose
         @SerializedName("etag")
         var etag: String? = null

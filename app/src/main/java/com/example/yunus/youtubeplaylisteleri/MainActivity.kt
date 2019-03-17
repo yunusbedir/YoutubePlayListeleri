@@ -2,7 +2,9 @@ package com.example.yunus.youtubeplaylisteleri
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,6 +37,11 @@ class MainActivity : AppCompatActivity() {
                 gelenVeri = response.body()
                 oynatmaListeleri = gelenVeri?.items
                 myPlaylisteleriAdapter = PlaylisteleriAdapter(oynatmaListeleri)
+                recyclerView.adapter = myPlaylisteleriAdapter
+                var myLayoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
+                recyclerView.layoutManager=myLayoutManager
+
+                supportActionBar?.setSubtitle("Oynatma Listeleri : " + oynatmaListeleri?.size)
 
 
             }
